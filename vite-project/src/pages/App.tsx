@@ -1,6 +1,8 @@
 import Title from "./title";
 import "../main.sass";
 import "./home.sass";
+import { Dropdown } from "./dropdown";
+import "./modal.sass";
 
 function App() {
   return (
@@ -9,9 +11,35 @@ function App() {
       <div className="spacer">
         <input placeholder="Search news" className="homeSearch" type="search" />
       </div>
-      <h2 className="cap">Sport</h2>
-      <h3></h3>
-      <p></p>
+      <Dropdown title="Health">
+        <span>
+          <h3>Headline</h3>
+          <p>
+            Surfing is a surface water sport in which the wave rider, referred
+            to as...
+          </p>
+        </span>
+      </Dropdown>
+      <Dropdown title="Sports">
+        <img src="https" alt="" />
+        <span>
+          <h3>Headline</h3>
+
+          <p>
+            Surfing is a surface water sport in which the wave rider, referred
+            to as...
+          </p>
+        </span>
+      </Dropdown>
+      <Dropdown title="Travel">
+        <span>
+          <h3>Headline</h3>
+          <p>
+            Surfing is a surface water sport in which the wave rider, referred
+            to as...
+          </p>
+        </span>
+      </Dropdown>
     </div>
   );
 }

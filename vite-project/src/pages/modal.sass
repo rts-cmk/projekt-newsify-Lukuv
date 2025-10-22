@@ -1,0 +1,40 @@
+@use '../_variables.sass' as v
+
+dialog
+    padding: 10px
+    border: none
+    position: relative
+
+.modalContainer
+    height: 100%
+    transition: all 1s ease-out
+    display: flex
+    flex-direction: column
+    .modalTitel
+        display: flex
+        align-items: center
+        text-transform: uppercase
+        img
+            width: 20px
+            height: 20px
+            margin-right: 10px
+    button
+        display: flex
+        align-items: center
+        justify-content: space-between
+        width: 100%
+        padding: 10px
+        border: 0.5px solid v.$border-color
+        svg
+            width: 15px
+            height: 15px
+            fill: currentColor
+            transition: transform 0.3s ease
+            &.openIcon
+                transform: rotate(90deg)
+    .childModal
+        max-height: 0
+        transition: all 2s ease-out
+        &[open]
+            max-height: 100%
+            transition: all 2s ease-out
