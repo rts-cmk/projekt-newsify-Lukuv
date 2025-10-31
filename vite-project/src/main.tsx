@@ -9,11 +9,14 @@ import NotFound from "./pages/notfound404";
 import Navigation from "./pages/nav";
 import "./main.sass";
 import LoadingScreen from "./pages/loadingScreen";
+import Onboarding from "./pages/onboarding";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <BrowserRouter>
-    <LoadingScreen />
+      <LoadingScreen />
+      <Onboarding />
+      <Navigation />
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/archive" element={<Archive />} />
@@ -21,7 +24,6 @@ createRoot(document.getElementById("root")!).render(
         <Route path="/settings" element={<Settings />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-      <Navigation />
     </BrowserRouter>
   </StrictMode>
 );

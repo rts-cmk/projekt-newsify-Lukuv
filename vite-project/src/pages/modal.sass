@@ -7,18 +7,23 @@ dialog
 
 .modalContainer
     height: 100%
-    transition: all 1s ease-out
     display: flex
     flex-direction: column
+    .childInside
+        display: flex
+        gap: 10px
+        align-items: center
     .modalTitel
         display: flex
         align-items: center
         text-transform: uppercase
+        font-weight: bold
+        color: v.$navigation-font-color
         img
             width: 20px
             height: 20px
             margin-right: 10px
-    button
+    .dropdown
         display: flex
         align-items: center
         justify-content: space-between
@@ -28,13 +33,12 @@ dialog
         svg
             width: 15px
             height: 15px
-            fill: currentColor
-            transition: transform 0.3s ease
+            fill: black
+            transition: transform 0.5s ease
             &.openIcon
                 transform: rotate(90deg)
     .childModal
-        max-height: 0
-        transition: all 2s ease-out
+        max-height: 1%
+        overflow: hidden
         &[open]
             max-height: 100%
-            transition: all 2s ease-out

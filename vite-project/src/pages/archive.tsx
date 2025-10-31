@@ -1,10 +1,12 @@
 import Title from './title';
+import Archive from './ArchiveApi';
+import "./home.sass";
 
 function archive() {
   return (
     <div>
       <Title />
-      <h1>Archive</h1>
+      <Archive></Archive>
     </div>
   );
 }

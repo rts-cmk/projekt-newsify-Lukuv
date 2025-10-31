@@ -9,6 +9,7 @@ body
     background-color: v.$background-color
     margin: auto
     max-width: 1080px
+    padding-bottom: 74px
 
 .titleContainer
     display: flex
@@ -25,6 +26,8 @@ body
     border: 1px solid v.$border-color
     justify-content: space-around
     position: fixed
+    background-color: white
+    z-index: 1
     width: 100%
     bottom: 0
     a
@@ -37,8 +40,76 @@ body
         font-weight: bold
         &.active
             color: v.$active-navigation-font-color
-.nav-icon
-    width: 24px
-    height: 24px
-    fill: currentColor
+    .nav-icon
+        width: 24px
+        height: 24px
+        fill: currentColor
 
+.homeApiWrapper
+    display: flex
+    flex-direction: row
+    border-bottom: 1px solid v.$border-color
+    padding: 10px
+    position: relative
+    h2
+        font-size: 16px
+        margin-bottom: 10px
+    p
+        font-size: 12px
+    img
+        max-width: 100px
+        max-height: 100px
+        object-fit: cover
+        margin-right: 15px
+    span
+        width: 100%
+
+.article__box
+    position: absolute
+    top: 0
+    right: 0
+    background-color: v.$color-grinch
+    width: 115px
+    height: 100%
+    transform: translateX(100%)
+    display: flex
+    justify-content: center
+    align-items: center
+.article__box2
+    position: absolute
+    top: 0
+    right: 0
+    background-color: red
+    width: 115px
+    height: 100%
+    transform: translateX(100%)
+    display: flex
+    justify-content: center
+    align-items: center
+
+.grønKnap
+    background-color: v.$color-grinch
+    color: white
+    border: none
+    padding: 10px 20px
+    border-radius: none
+    border: none
+    display: flex
+    align-items: center
+    width: fit-content
+    justify-content: center
+    cursor: pointer
+    font-family: v.$font-family
+.rødKnap
+    background-color: red
+    color: white
+    border: none
+    padding: 10px 20px
+    border-radius: none
+    border: none
+    display: flex
+    align-items: center
+    width: fit-content
+    justify-content: center
+    cursor: pointer
+    font-family: v.$font-family

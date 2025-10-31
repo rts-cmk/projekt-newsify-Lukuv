@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 
 export function Dropdown({
   title,
@@ -8,16 +8,19 @@ export function Dropdown({
   children: React.ReactNode;
 }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [height, setHeight] = useState(100);
+  const contentRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (contentRef.current) {
+      setHeight(contentRef.current.scrollHeight);
+    }
+  }, [children]);
 
   return (
-    <div className="modalContainer">
-      <button
-        className="cap dropdown"
-        onClick={() => {
-          setIsOpen(!isOpen);
-        }}
-      >
-        <span className="modalTitel">
+    <div className="modalContainer border rounded shadow w-64">
+      <button className="cap dropdown" onClick={() => setIsOpen(!isOpen)}>
+        <span className="modalTitel flex items-center gap-2">
           <img src="../public/newsify_logo.svg" alt="Hallo?" />
           {title}
         </span>
@@ -32,16 +35,18 @@ export function Dropdown({
           <path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z" />
         </svg>
       </button>
-      <dialog className="childModal" open={isOpen}>
-        <span className="childInside">
-          <img
-            className="placeholderLeft"
-            src="https://placehold.co/50x50"
-            alt=""
-          />
-          {children}
-        </span>
-      </dialog>
+
+      {/* Vi bruger div i stedet for dialog */}
+      <div
+        ref={contentRef}
+        style={{
+          maxHeight: isOpen ? `${height}px` : "0px",
+          overflow: "hidden",
+          transition: "max-height 0.5s ease",
+        }}
+      >
+        <div className="childInside">{children}</div>
+      </div>
     </div>
   );
 }

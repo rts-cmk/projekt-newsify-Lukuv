@@ -1,10 +1,11 @@
 import Title from './title';
+import ApiCall from './api'
 
 function Popular() {
   return (
     <div>
       <Title />
-      <h1>Popular</h1>
+      <ApiCall />
     </div>
   );
 }
