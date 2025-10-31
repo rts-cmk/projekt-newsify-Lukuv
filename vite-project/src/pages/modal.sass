@@ -1,0 +1,44 @@
+@use '../_variables.sass' as v
+
+dialog
+    padding: 10px
+    border: none
+    position: relative
+
+.modalContainer
+    height: 100%
+    display: flex
+    flex-direction: column
+    .childInside
+        display: flex
+        gap: 10px
+        align-items: center
+    .modalTitel
+        display: flex
+        align-items: center
+        text-transform: uppercase
+        font-weight: bold
+        color: v.$navigation-font-color
+        img
+            width: 20px
+            height: 20px
+            margin-right: 10px
+    .dropdown
+        display: flex
+        align-items: center
+        justify-content: space-between
+        width: 100%
+        padding: 10px
+        border: 0.5px solid v.$border-color
+        svg
+            width: 15px
+            height: 15px
+            fill: black
+            transition: transform 0.5s ease
+            &.openIcon
+                transform: rotate(90deg)
+    .childModal
+        max-height: 1%
+        overflow: hidden
+        &[open]
+            max-height: 100%
