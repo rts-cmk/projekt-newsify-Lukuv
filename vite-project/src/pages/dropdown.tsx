@@ -21,7 +21,7 @@ export function Dropdown({
     <div className="modalContainer border rounded shadow w-64">
       <button className="cap dropdown" onClick={() => setIsOpen(!isOpen)}>
         <span className="modalTitel flex items-center gap-2">
-          <img src="../public/newsify_logo.svg" alt="Hallo?" />
+          <img src="/newsify_logo.svg" alt="Hallo?" />
           {title}
         </span>
         <svg

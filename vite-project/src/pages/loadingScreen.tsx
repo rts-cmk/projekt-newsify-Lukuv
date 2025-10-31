@@ -11,7 +11,7 @@ export default function LoadingScreen() {
     >
       <motion.img
         className="niggerScreen"
-        src="../public/newsify_logo.svg"
+        src="/newsify_logo.svg"
         alt="Loading Svg"
         initial={{ rotate: 0, scale: 0.5, display: "block" }}
         animate={{ rotate: 0, scale: 1, display: "block" }}
